@@ -11,6 +11,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 def main():
     url = "https://raw.githubusercontent.com/Sandbird/covid19-Greece/master/cases.csv"
     df = pd.read_csv(url)
+    df.set_index('id',inplace=True)                                                                         #To id θα γίνει το νέο index
     
     # Δημιουργούμε το γραφικό περιβάλλον
     create_gui(df)
@@ -63,8 +64,7 @@ def create_gui(df):
     root.mainloop()
 
 def compare_dates(df):
-
-    df.set_index('id',inplace=True)                                                                         #To id θα γίνει το νέο index
+    
     print("Καρτέλα Ημερήσιας Επισκόπησης: (Προηγούμενη Μέρα-Τωρινή Μέρα-Ποσοστιαία Διαφορά)")
     copied_df = df.copy(deep=True)                                                                          #Δημιουργία Αντιγράφου και μετονομασία στήλεων
     copied_df.rename(columns={'date':'Ημερομηνία','new_cases':'Νέα Κρούσματα','confirmed':'Επιβεβαιομένα Κρούσματα','new_deaths':'Νέες Απώλειες','total_deaths':'Συνολικές Απώλειες',
