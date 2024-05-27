@@ -54,12 +54,12 @@ def create_gui(df):
     frame.grid_rowconfigure(0, weight=1)
 
     # Προσθέτουμε κουμπιά για κάθε συνάρτηση
-    ttk.Button(data_frame, text="Compare Dates", command=lambda: compare_dates(df)).pack(pady=5, fill=tk.X)
-    ttk.Button(vis_frame, text="Pie Chart 1", command=lambda: pie_1(df)).pack(pady=5, fill=tk.X)
-    ttk.Button(vis_frame, text="Pie Chart 2", command=lambda: pie_2(df)).pack(pady=5, fill=tk.X)
-    ttk.Button(vis_frame, text="Vaccinations and Actives", command=lambda: vaccinations_and_actives(df)).pack(pady=5, fill=tk.X)
-    ttk.Button(vis_frame, text="Cases and Deaths", command=lambda: cases_deaths(df)).pack(pady=5, fill=tk.X)
-    ttk.Button(vis_frame, text="Hospitalized", command=lambda: hospitalized(df)).pack(pady=5, fill=tk.X)
+    ttk.Button(data_frame, text="Καρτέλα Ημερήσιας Επισκόπησης", command=lambda: compare_dates(df)).pack(pady=5, fill=tk.X)
+    ttk.Button(vis_frame, text="Καρτέλα Ποσοστών 1", command=lambda: pie_1(df)).pack(pady=5, fill=tk.X)
+    ttk.Button(vis_frame, text="Καρτέλα Ποσοστών 2", command=lambda: pie_2(df)).pack(pady=5, fill=tk.X)
+    ttk.Button(vis_frame, text="Εμβολιασμοί και Ενεργά Κρούσματα", command=lambda: vaccinations_and_actives(df)).pack(pady=5, fill=tk.X)
+    ttk.Button(vis_frame, text="Κρούσματα και Θάνατοι", command=lambda: cases_deaths(df)).pack(pady=5, fill=tk.X)
+    ttk.Button(vis_frame, text="Νοσηλευόμενοι", command=lambda: hospitalized(df)).pack(pady=5, fill=tk.X)
 
     root.mainloop()
 
